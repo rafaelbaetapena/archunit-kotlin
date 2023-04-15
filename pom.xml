@@ -40,6 +40,22 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>com.tngtech.archunit</groupId>
+			<artifactId>archunit-junit5</artifactId>
+			<version>1.0.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.nhaarman.mockitokotlin2/mockito-kotlin -->
+		<dependency>
+			<groupId>com.nhaarman.mockitokotlin2</groupId>
+			<artifactId>mockito-kotlin</artifactId>
+			<version>2.2.0</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
