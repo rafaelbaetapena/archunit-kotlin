@@ -5,7 +5,6 @@ import com.nhaarman.mockitokotlin2.whenever
 import com.rafaelbaetapena.archunitkotlin.core.domain.Book
 import com.rafaelbaetapena.archunitkotlin.core.ports.out.BookPortOut
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.InjectMocks
