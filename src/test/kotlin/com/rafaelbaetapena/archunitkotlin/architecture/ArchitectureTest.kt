@@ -5,6 +5,7 @@ import com.rafaelbaetapena.archunitkotlin.architecture.core.CoreRules
 import com.rafaelbaetapena.archunitkotlin.architecture.core.PortsRules
 import com.rafaelbaetapena.archunitkotlin.architecture.core.UseCasesRules
 import com.rafaelbaetapena.archunitkotlin.architecture.dataprovider.DataProviderRules
+import com.rafaelbaetapena.archunitkotlin.architecture.entrypoint.RestRules
 import com.rafaelbaetapena.archunitkotlin.architecture.entrypoint.EntrypointRules
 import com.tngtech.archunit.core.importer.ImportOption.*
 import com.tngtech.archunit.junit.AnalyzeClasses
@@ -43,4 +44,8 @@ class ArchitectureTest {
     // Entrypoint Package Rules
     @ArchTest
     val entrypointRules: ArchTests = ArchTests.`in`(EntrypointRules::class.java)
+
+    // Entrypoint.Rest Package Rules
+    @ArchTest
+    val restRules: ArchTests = ArchTests.`in`(RestRules::class.java)
 }

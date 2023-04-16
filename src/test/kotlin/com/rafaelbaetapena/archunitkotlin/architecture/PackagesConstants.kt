@@ -9,4 +9,5 @@ object PackagesConstants {
     const val corePortsOutPackageName: String = "..core.ports.out"
     const val dataProviderPackageName: String = "..dataprovider"
     const val entrypointPackageName: String = "..entrypoint"
+    const val entrypointRestPackageName: String = "..entrypoint.rest"
 }
