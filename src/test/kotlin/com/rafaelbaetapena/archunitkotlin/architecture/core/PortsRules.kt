@@ -6,19 +6,19 @@ import com.tngtech.archunit.lang.ArchRule
 import com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes
 import com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses
 
-class PortRules {
+class PortsRules {
     @ArchTest
-    val noClassesShouldResideInAPackageCorePort: ArchRule =
+    val noClassesShouldResideInAPackageCorePorts: ArchRule =
         noClasses().should().resideInAPackage(PackagesConstants.corePortsPackageName)
 
     @ArchTest
-    val classesThatResideInAPackagePortInShouldBeInterfaces: ArchRule =
+    val classesThatResideInAPackagePortsInShouldBeInterfaces: ArchRule =
         classes().that().resideInAPackage(PackagesConstants.corePortsInPackageName)
             .should().beInterfaces()
             .andShould().haveSimpleNameEndingWith("PortIn")
 
     @ArchTest
-    val classesThatResideInAPackagePortOutShouldBeInterfaces: ArchRule =
+    val classesThatResideInAPackagePortsOutShouldBeInterfaces: ArchRule =
         classes().that().resideInAPackage(PackagesConstants.corePortsOutPackageName)
             .should().beInterfaces()
             .andShould().haveSimpleNameEndingWith("PortOut")

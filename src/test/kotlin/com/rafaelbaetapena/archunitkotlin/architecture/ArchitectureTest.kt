@@ -2,7 +2,8 @@ package com.rafaelbaetapena.archunitkotlin.architecture
 
 import com.rafaelbaetapena.archunitkotlin.architecture.config.ConfigRules
 import com.rafaelbaetapena.archunitkotlin.architecture.core.CoreRules
-import com.rafaelbaetapena.archunitkotlin.architecture.core.PortRules
+import com.rafaelbaetapena.archunitkotlin.architecture.core.PortsRules
+import com.rafaelbaetapena.archunitkotlin.architecture.core.UseCasesRules
 import com.rafaelbaetapena.archunitkotlin.architecture.dataprovider.DataProviderRules
 import com.rafaelbaetapena.archunitkotlin.architecture.entrypoint.EntrypointRules
 import com.tngtech.archunit.core.importer.ImportOption.*
@@ -27,9 +28,13 @@ class ArchitectureTest {
     @ArchTest
     val coreRules: ArchTests = ArchTests.`in`(CoreRules::class.java)
 
-    // Core.Port Package Rules
+    // Core.UseCases Package Rules
     @ArchTest
-    val portRules: ArchTests = ArchTests.`in`(PortRules::class.java)
+    val useCasesRules: ArchTests = ArchTests.`in`(UseCasesRules::class.java)
+
+    // Core.Ports Package Rules
+    @ArchTest
+    val portsRules: ArchTests = ArchTests.`in`(PortsRules::class.java)
 
     // DataProvider Package Rules
     @ArchTest

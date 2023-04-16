@@ -8,9 +8,9 @@ import com.tngtech.archunit.junit.ArchTest
 import com.tngtech.archunit.lang.ArchCondition
 import com.tngtech.archunit.lang.ArchRule
 import com.tngtech.archunit.lang.ConditionEvents
+import com.tngtech.archunit.lang.SimpleConditionEvent
 import com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes
 import java.util.stream.Collectors.toList
-
 
 class UseCasesRules {
     @ArchTest
@@ -29,14 +29,14 @@ class UseCasesRules {
             override fun check(clazz: JavaClass, events: ConditionEvents) {
                 val name: String = clazz.name
                 val publicMethods: List<JavaMethod> = clazz.methods.stream()
-                    .filter { it.modifiers.contains(JavaModifier.PUBLIC) }.collect(toList())
+                    .filter { it.modifiers.contains(JavaModifier.PUBLIC) }
+                    .filter { it.name.startsWith("get").not() && it.name.startsWith("set").not() }
+                    .collect(toList())
 
-                if(publicMethods.size > 1) {
-                    throw AssertionError(
-                        java.lang.String.format("Class %s contains %d public methods, when limit is %d",
+                val satisfied = publicMethods.size == 1
+                val message = String.format("Class %s contains %d public methods, when limit is %d",
                             name, publicMethods.size, 1)
-                    )
-                }
+                events.add(SimpleConditionEvent(javaClass, satisfied, message))
             }
         }
     }
