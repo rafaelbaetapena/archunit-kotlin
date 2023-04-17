@@ -9,7 +9,11 @@ import com.tngtech.archunit.lang.ArchCondition
 import com.tngtech.archunit.lang.ArchRule
 import com.tngtech.archunit.lang.ConditionEvents
 import com.tngtech.archunit.lang.SimpleConditionEvent
+import com.tngtech.archunit.lang.syntax.ArchRuleDefinition
 import com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes
+import com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses
+import com.tngtech.archunit.library.freeze.FreezingArchRule
+import com.tngtech.archunit.library.freeze.FreezingArchRule.freeze
 import java.util.stream.Collectors.toList
 
 class UseCasesRules {
